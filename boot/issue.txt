@@ -1,0 +1,2 @@
+Raspberry Pi reference 2015-11-21
+Generated using Pi-gen, https://github.com/RPi-Distro/Pi-gen, jessie-stage2

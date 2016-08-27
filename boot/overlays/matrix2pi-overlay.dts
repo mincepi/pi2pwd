@@ -1,0 +1,29 @@
+/dts-v1/;
+/plugin/;
+
+/{
+	compatible = "brcm,bcm2708";
+
+	fragment@0 {
+		target-path = "/";
+		__overlay__ {
+			matrix2pi: matrix2pi {
+				compatible = "matrix2pi";
+				pinctrl-names = "default";
+				pinctrl-0 = <&matrix2pi_pins>;
+				status = "okay";
+			};
+		};
+	};
+
+	fragment@1 {
+		target = <&gpio>;
+		__overlay__ {
+			matrix2pi_pins: matrix2pi_pins {
+				brcm,pins = <1 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 20 21 22 23 24 25 26 27>;
+				brcm,function = <0>; /* all input */
+				brcm,pull = <0>; /* all no pull */
+			};
+		};
+	};
+};
